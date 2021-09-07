@@ -10,10 +10,8 @@
       "dependsOn": [
         "build-build"
       ],
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      }
+      "group": "build",
+      "problemMatcher": []
     },
     {
       "label": "build-build",
@@ -21,7 +19,12 @@
       "command": "g++ -std=c++14 -O0 src/example.cpp src/models/*.cpp src/algorithms/*.cpp -o example.out",
       "dependsOn": [
         "build-clear"
-      ]
+      ],
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
     },
     {
       "label": "build-clear",
@@ -52,17 +55,13 @@
       "label": "test-debug",
       "type": "shell",
       "command": "g++ -std=c++14 -g src/models/*.cpp src/algorithms/*.cpp test/models/*.cpp test/algorithms/*.cpp test/lib/*.cpp testexample.o -o test.out",
-      "dependsOn": [
-        // "test-clear"
-      ]
+      "dependsOn": []
     },
     {
       "label": "test-build",
       "type": "shell",
       "command": "g++ -std=c++14 -O0 src/models/*.cpp src/algorithms/*.cpp test/models/*.cpp test/algorithms/*.cpp test/lib/*.cpp testexample.o -o test.out",
-      "dependsOn": [
-        // "test-clear"
-      ]
+      "dependsOn": []
     },
     {
       "label": "test-clear",
